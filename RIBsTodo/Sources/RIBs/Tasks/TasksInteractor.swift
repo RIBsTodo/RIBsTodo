@@ -36,7 +36,7 @@ final class TasksInteractor
   , Reactor {
   
   enum Mutation {
-    case set
+    case setTasks([Task])
   }
   
   weak var router: TasksRouting?
@@ -44,21 +44,12 @@ final class TasksInteractor
   
   let initialState: TasksState
   
-  override init(presenter: TasksPresentable) {
+  private let taskService: TaskServiceProtocol
+  
+  init(presenter: TasksPresentable, taskService: TaskServiceProtocol) {
     defer { _ = self.state }
-    let cellReactors = (0...10).map { index in
-      return TaskCellReactor(
-        task: Task(
-          id: UUID().uuidString,
-          title: "title\(index)",
-          memo: "memo\(index)",
-          isChecked: false,
-          createdAt: Date(),
-          updateAt: Date()
-        )
-      )
-    }
-    self.initialState = TasksState(cellReactors: cellReactors)
+    self.taskService = taskService
+    self.initialState = TasksState()
     super.init(presenter: presenter)
     self.presenter.listener = self
   }
@@ -72,11 +63,23 @@ final class TasksInteractor
   }
   
   func mutate(action: TasksAction) -> Observable<Mutation> {
-    return .empty()
+    switch action {
+    case .refresh:
+      return self.tasksMutation()
+    }
+  }
+  
+  private func tasksMutation() -> Observable<Mutation> {
+    return self.taskService.tasks().asObservable()
+      .map(Mutation.setTasks)
   }
   
   func reduce(state: TasksState, mutation: Mutation) -> TasksState {
     var newState = state
+    switch mutation {
+    case let .setTasks(tasks):
+      newState.cellReactors = tasks.map(TaskCellReactor.init)
+    }
     return newState
   }
 }
