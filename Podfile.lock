@@ -1,0 +1,95 @@
+PODS:
+  - Differentiator (4.0.1)
+  - ManualLayout (1.3.0)
+  - Nimble (8.0.7)
+  - Quick (2.2.0)
+  - ReactorKit (2.0.1):
+    - RxSwift (~> 5.0)
+  - ReusableKit (3.0.0):
+    - ReusableKit/Core (= 3.0.0)
+  - ReusableKit/Core (3.0.0)
+  - RxCocoa (5.1.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxDataSources (4.0.1):
+    - Differentiator (~> 4.0)
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
+  - RxOptional (4.1.0):
+    - RxCocoa (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.1.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.1)
+  - RxSwiftExt (5.2.0):
+    - RxSwiftExt/Core (= 5.2.0)
+    - RxSwiftExt/RxCocoa (= 5.2.0)
+  - RxSwiftExt/Core (5.2.0):
+    - RxSwift (~> 5.0)
+  - RxSwiftExt/RxCocoa (5.2.0):
+    - RxCocoa (~> 5.0)
+    - RxSwiftExt/Core
+  - RxViewController (1.0.0):
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
+  - SnapKit (5.0.1)
+  - SwiftyColor (1.2.1)
+  - Then (2.6.0)
+
+DEPENDENCIES:
+  - ManualLayout
+  - Nimble
+  - Quick
+  - ReactorKit
+  - ReusableKit
+  - RxCocoa
+  - RxDataSources
+  - RxOptional
+  - RxRelay
+  - RxSwift
+  - RxSwiftExt
+  - RxViewController
+  - SnapKit
+  - SwiftyColor
+  - Then
+
+SPEC REPOS:
+  trunk:
+    - Differentiator
+    - ManualLayout
+    - Nimble
+    - Quick
+    - ReactorKit
+    - ReusableKit
+    - RxCocoa
+    - RxDataSources
+    - RxOptional
+    - RxRelay
+    - RxSwift
+    - RxSwiftExt
+    - RxViewController
+    - SnapKit
+    - SwiftyColor
+    - Then
+
+SPEC CHECKSUMS:
+  Differentiator: 886080237d9f87f322641dedbc5be257061b0602
+  ManualLayout: 68ac8cfa6b5f656f7a9fadec3730208b95986880
+  Nimble: a73af6ecd4c9106f434f3d55fc54570be3739e0b
+  Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
+  ReactorKit: a63c5e11e0fd32d59d672e54178b0ed2876b764b
+  ReusableKit: e5f853ad4652e411f96b6119b2488afa12929be6
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
+  RxOptional: b1fcd60856807a564c0215c2184b8d33e7826dc2
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  RxSwiftExt: 4ca80336f43c28f11a2825cdd2fc61dd6c044697
+  RxViewController: 7330a46e5c31cd680db169da4c9fc8676e975a81
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SwiftyColor: a2f468071c1b96be1ba41a0be7cf70d645cd7dcc
+  Then: 90cd104fd951cec1980a03f57704ad8f784d4d79
+
+PODFILE CHECKSUM: d8e2a76b66adf2a11bc68770fd5b0df834f334bf
+
+COCOAPODS: 1.8.4
