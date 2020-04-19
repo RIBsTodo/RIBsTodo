@@ -2,6 +2,7 @@ platform :ios, '13.0'
 use_frameworks!
 
 target 'RIBsTodo' do
+  pod 'RIBs', git: 'https://github.com/uber/RIBs.git', branch: 'master', submodules: true
   pod 'RxViewController'
   pod 'RxSwift'
   pod 'RxRelay'
