@@ -27,7 +27,7 @@ final class TasksBuilder: Builder<TasksDependency>, TasksBuildable {
   }
   
   func build(withListener listener: TasksListener) -> TasksRouting {
-    let component = TasksComponent(dependency: dependency)
+    let _ = TasksComponent(dependency: dependency)
     let viewController = TasksViewController()
     let interactor = TasksInteractor(presenter: viewController)
     interactor.listener = listener

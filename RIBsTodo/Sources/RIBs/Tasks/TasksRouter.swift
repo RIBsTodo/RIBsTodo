@@ -20,7 +20,10 @@ final class TasksRouter
   : ViewableRouter<TasksInteractable, TasksViewControllable>
   , TasksRouting {
   
-  override init(interactor: TasksInteractable, viewController: TasksViewControllable) {
+  override init(
+    interactor: TasksInteractable,
+    viewController: TasksViewControllable
+  ) {
     super.init(interactor: interactor, viewController: viewController)
     interactor.router = self
   }

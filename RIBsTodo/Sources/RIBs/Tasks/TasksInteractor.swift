@@ -8,6 +8,7 @@
 
 import RIBs
 import RxSwift
+import ReactorKit
 
 protocol TasksRouting: ViewableRouting {
 }
@@ -19,17 +20,47 @@ protocol TasksPresentable: Presentable {
 protocol TasksListener: class {
 }
 
+struct TasksState {
+  var cellReactors: [TaskCellReactor] = []
+  var sections: [TasksViewSection] {
+    let sectionItems = self.cellReactors
+      .map(TasksViewSection.Item.task)
+    return [TasksViewSection(identity: .tasks, items: sectionItems)]
+  }
+}
+
 final class TasksInteractor
   : PresentableInteractor<TasksPresentable>
   , TasksInteractable
-  , TasksPresentableListener {
+  , TasksPresentableListener
+  , Reactor {
+  
+  enum Mutation {
+    case set
+  }
   
   weak var router: TasksRouting?
   weak var listener: TasksListener?
   
+  let initialState: TasksState
+  
   override init(presenter: TasksPresentable) {
+    defer { _ = self.state }
+    let cellReactors = (0...10).map { index in
+      return TaskCellReactor(
+        task: Task(
+          id: UUID().uuidString,
+          title: "title\(index)",
+          memo: "memo\(index)",
+          isChecked: false,
+          createdAt: Date(),
+          updateAt: Date()
+        )
+      )
+    }
+    self.initialState = TasksState(cellReactors: cellReactors)
     super.init(presenter: presenter)
-    presenter.listener = self
+    self.presenter.listener = self
   }
   
   override func didBecomeActive() {
@@ -38,5 +69,14 @@ final class TasksInteractor
   
   override func willResignActive() {
     super.willResignActive()
+  }
+  
+  func mutate(action: TasksAction) -> Observable<Mutation> {
+    return .empty()
+  }
+  
+  func reduce(state: TasksState, mutation: Mutation) -> TasksState {
+    var newState = state
+    return newState
   }
 }
