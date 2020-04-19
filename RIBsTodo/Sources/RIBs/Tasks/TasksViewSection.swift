@@ -13,7 +13,7 @@ struct TasksViewSection: Equatable {
     case tasks
   }
   let identity: Identity
-  let items: [Item]
+  var items: [Item]
 }
 
 extension TasksViewSection: AnimatableSectionModelType {
