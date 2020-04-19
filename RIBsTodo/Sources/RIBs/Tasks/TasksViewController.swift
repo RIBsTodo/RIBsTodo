@@ -66,8 +66,17 @@ final class TasksViewController
     guard let action = self.listener?.action else { return }
     guard let state = self.listener?.state else { return }
     let reactor = (state, action)
+    self.bindRefresh(reactor: reactor)
     self.bindDelegate(reactor: reactor)
     self.bindDataSources(reactor: reactor)
+  }
+  
+  func bindRefresh(reactor: TasksReactor) {
+    self.rx.viewWillAppear
+      .take(1)
+      .map { _ in .refresh }
+      .bind(to: reactor.action)
+      .disposed(by: self.disposeBag)
   }
   
   func bindDelegate(reactor: TasksReactor) {
