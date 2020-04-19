@@ -29,3 +29,11 @@ import RealmSwift
     return [TaskTable.Property.updateAt.rawValue]
   }
 }
+
+extension TaskTable {
+  convenience init(title: String, memo: String) {
+    self.init()
+    self.title = title
+    self.memo = memo
+  }
+}
