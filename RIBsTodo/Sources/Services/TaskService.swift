@@ -13,6 +13,7 @@ import RxRealm
 
 protocol TaskServiceProtocol {
   var event: PublishRelay<Task.Event> { get set }
+  func create(title: String, memo: String) -> Single<Task>
   func tasks() -> Single<[Task]>
 }
 
@@ -25,10 +26,26 @@ class TaskService: TaskServiceProtocol {
     self.realm = realm
   }
   
+  func create(title: String, memo: String) -> Single<Task> {
+    return Single.create { observer in
+      do {
+        try self.realm.write {
+          let taskTable = TaskTable(title: title, memo: memo)
+          self.realm.add(taskTable)
+          observer(.success(Task(taskTable)))
+        }
+      } catch let error {
+        observer(.error(error))
+      }
+      return Disposables.create()
+    }
+  }
+  
   func tasks() -> Single<[Task]> {
-    return Observable
-      .array(from: self.realm.objects(TaskTable.self))
-      .flatMap { taskTables -> Observable<[Task]>in .just(taskTables.map(Task.init)) }
-      .asSingle()
+    return Single.create { observer in
+      let tasks = Array(self.realm.objects(TaskTable.self).map(Task.init))
+      observer(.success(tasks))
+      return Disposables.create()
+    }
   }
 }
