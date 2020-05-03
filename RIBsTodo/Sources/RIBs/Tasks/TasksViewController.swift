@@ -49,6 +49,11 @@ final class TasksViewController
   weak var listener: TasksPresentableListener?
   
   private let dataSource = RxTableViewSectionedAnimatedDataSource<TasksViewSection>(
+    animationConfiguration: AnimationConfiguration(
+      insertAnimation: .none,
+      reloadAnimation: .none,
+      deleteAnimation: .none
+    ),
     configureCell: { _, tableView, indexPath, sectionItem in
       switch sectionItem {
       case let .task(cellReactor):
