@@ -31,5 +31,7 @@ class TaskCell: BaseTableViewCell, ReactorKit.View {
       .distinctUntilChanged()
       .bind(to: self.titleLabel.rx.text)
       .disposed(by: self.disposeBag)
+    
+    self.accessoryType = reactor.currentState.isMarked ? .checkmark : .none
   }
 }
