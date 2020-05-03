@@ -18,6 +18,8 @@ target 'RIBsTodo' do
   pod 'RxSwiftExt'
   pod 'RealmSwift'
   pod 'RxRealm'
+  pod 'Swinject'
+  pod 'URLNavigator'
   
   target 'RIBsTodoTests' do
     inherit! :search_paths
