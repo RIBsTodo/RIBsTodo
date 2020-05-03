@@ -12,23 +12,18 @@ struct Task: Hashable {
   var id: String
   var title: String
   var memo: String
-  var isChecked: Bool
+  var isMarked: Bool
   var createdAt: Date
   var updateAt: Date
 }
 
 extension Task {
   enum Event {
-  }
-}
-
-extension Task {
-  init(_ table: TaskTable) {
-    self.id = table.id
-    self.title = table.title
-    self.memo = table.memo
-    self.isChecked = table.isChecked
-    self.createdAt = table.createdAt
-    self.updateAt = table.updateAt
+    case update(Task)
+    case create(Task)
+    case delete(id: String)
+    case move(id: String, destinationIndex: Int)
+    case mark(id: String)
+    case unmark(id: String)
   }
 }
