@@ -1,0 +1,151 @@
+PODS:
+  - Differentiator (4.0.1)
+  - ManualLayout (1.3.0)
+  - Nimble (8.0.7)
+  - Quick (2.2.0)
+  - ReactorKit (2.1.0):
+    - RxSwift (~> 5.0)
+    - WeakMapTable (~> 1.1)
+  - Realm (4.4.1):
+    - Realm/Headers (= 4.4.1)
+  - Realm/Headers (4.4.1)
+  - RealmSwift (4.4.1):
+    - Realm (= 4.4.1)
+  - ReusableKit (3.0.0):
+    - ReusableKit/Core (= 3.0.0)
+  - ReusableKit/Core (3.0.0)
+  - RIBs (0.9.3):
+    - RxRelay (~> 5.0)
+    - RxSwift (~> 5.0)
+  - RxCocoa (5.1.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxDataSources (4.0.1):
+    - Differentiator (~> 4.0)
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
+  - RxOptional (4.1.0):
+    - RxCocoa (~> 5)
+    - RxSwift (~> 5)
+  - RxRealm (2.0.0):
+    - RealmSwift (~> 4.0)
+    - RxSwift (~> 5.0)
+  - RxRelay (5.1.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.1)
+  - RxSwiftExt (5.2.0):
+    - RxSwiftExt/Core (= 5.2.0)
+    - RxSwiftExt/RxCocoa (= 5.2.0)
+  - RxSwiftExt/Core (5.2.0):
+    - RxSwift (~> 5.0)
+  - RxSwiftExt/RxCocoa (5.2.0):
+    - RxCocoa (~> 5.0)
+    - RxSwiftExt/Core
+  - RxViewController (1.0.0):
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
+  - SnapKit (5.0.1)
+  - Stubber (1.5.0)
+  - SwiftyColor (1.2.1)
+  - Swinject (2.7.1)
+  - Then (2.6.0)
+  - URLNavigator (2.3.0)
+  - WeakMapTable (1.1.0)
+
+DEPENDENCIES:
+  - ManualLayout
+  - Nimble
+  - Quick
+  - ReactorKit (from `https://github.com/ReactorKit/ReactorKit`, branch `master`)
+  - RealmSwift
+  - ReusableKit
+  - RIBs (from `https://github.com/uber/RIBs.git`, branch `master`)
+  - RxCocoa
+  - RxDataSources
+  - RxOptional
+  - RxRealm
+  - RxRelay
+  - RxSwift
+  - RxSwiftExt
+  - RxViewController
+  - SnapKit
+  - Stubber
+  - SwiftyColor
+  - Swinject
+  - Then
+  - URLNavigator
+
+SPEC REPOS:
+  trunk:
+    - Differentiator
+    - ManualLayout
+    - Nimble
+    - Quick
+    - Realm
+    - RealmSwift
+    - ReusableKit
+    - RxCocoa
+    - RxDataSources
+    - RxOptional
+    - RxRealm
+    - RxRelay
+    - RxSwift
+    - RxSwiftExt
+    - RxViewController
+    - SnapKit
+    - Stubber
+    - SwiftyColor
+    - Swinject
+    - Then
+    - URLNavigator
+    - WeakMapTable
+
+EXTERNAL SOURCES:
+  ReactorKit:
+    :branch: master
+    :git: https://github.com/ReactorKit/ReactorKit
+    :submodules: true
+  RIBs:
+    :branch: master
+    :git: https://github.com/uber/RIBs.git
+    :submodules: true
+
+CHECKOUT OPTIONS:
+  ReactorKit:
+    :commit: 30cf86f659b8171785d21f0a42918f526acf94c3
+    :git: https://github.com/ReactorKit/ReactorKit
+    :submodules: true
+  RIBs:
+    :commit: 58305f7963553b53dbabd76c5a04e4c31e72d243
+    :git: https://github.com/uber/RIBs.git
+    :submodules: true
+
+SPEC CHECKSUMS:
+  Differentiator: 886080237d9f87f322641dedbc5be257061b0602
+  ManualLayout: 68ac8cfa6b5f656f7a9fadec3730208b95986880
+  Nimble: a73af6ecd4c9106f434f3d55fc54570be3739e0b
+  Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
+  ReactorKit: 12a93358c554bb3f167b16b14c40374fa9cd5acd
+  Realm: 4eb04d7487bd43c0581256f40b424eafb711deff
+  RealmSwift: 3eb8924ff7100df5928c7602f71d0fec51e7c9c5
+  ReusableKit: e5f853ad4652e411f96b6119b2488afa12929be6
+  RIBs: efceda5df20c1a1e05139232a4638a6242caa92a
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
+  RxOptional: b1fcd60856807a564c0215c2184b8d33e7826dc2
+  RxRealm: 900f5c7e6f0a2d6527b56eaf7283f3035ec1e8ba
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  RxSwiftExt: 4ca80336f43c28f11a2825cdd2fc61dd6c044697
+  RxViewController: 7330a46e5c31cd680db169da4c9fc8676e975a81
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  Stubber: 6cf1160d37f0d1da7afbe1892f65bb7d5984bba4
+  SwiftyColor: a2f468071c1b96be1ba41a0be7cf70d645cd7dcc
+  Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
+  Then: 90cd104fd951cec1980a03f57704ad8f784d4d79
+  URLNavigator: 2593c0e2d293732ec5c44503cf54dceba1a68085
+  WeakMapTable: d0327eda092be6a8f7c532942ae98dc7948f5d32
+
+PODFILE CHECKSUM: a2b9ea91cb3b0a387e46e3f0279ce87b5c13fa7a
+
+COCOAPODS: 1.8.4
