@@ -9,8 +9,7 @@
 import ReactorKit
 import RxSwift
 
-class TaskCellReactor: Reactor, IdentityHashable {
-  
+class TaskCellReactor: Reactor {
   enum Action {
   }
   
@@ -18,12 +17,9 @@ class TaskCellReactor: Reactor, IdentityHashable {
   }
   
   struct State {
-    var title: String {
-      return self.task.title
-    }
-    var isChecked: Bool {
-      return self.task.isChecked
-    }
+    var title: String { self.task.title }
+    var isMarked: Bool { self.task.isMarked }
+    var id: String { self.task.id }
     fileprivate var task: Task
   }
   
@@ -35,5 +31,15 @@ class TaskCellReactor: Reactor, IdentityHashable {
   
   init(task: Task) {
     self.initialState = State(task: task)
+  }
+}
+
+extension TaskCellReactor: Hashable {
+  static func == (lhs: TaskCellReactor, rhs: TaskCellReactor) -> Bool {
+    return lhs.task == rhs.task
+  }
+  
+  func hash(into hasher: inout Hasher) {
+    hasher.combine(self.task)
   }
 }
