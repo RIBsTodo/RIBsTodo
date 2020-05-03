@@ -3,7 +3,7 @@ RIBsTodo
 
 ![Swift](https://img.shields.io/badge/Swift-5.0-orange.svg)
 
-RIBsTodo is an iOS application developed using [RIBs](https://github.com/uber/RIBs).
+RIBsTodo is an iOS application developed using [RIBs](https://github.com/uber/RIBs). Inspired by [RxTodo](https://github.com/devxoul/RxTodo).
 
 Features
 --------
@@ -23,4 +23,4 @@ Requirements
 License
 -------
 
-RxTodo is under MIT license. See the [LICENSE](LICENSE) for more info.
+RIBsTodo is under MIT license. See the [LICENSE](LICENSE) for more info.
