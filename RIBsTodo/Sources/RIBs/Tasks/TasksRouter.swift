@@ -8,23 +8,52 @@
 
 import RIBs
 
-protocol TasksInteractable: Interactable {
+protocol TasksInteractable: Interactable, TaskEditingListener {
   var router: TasksRouting? { get set }
   var listener: TasksListener? { get set }
 }
 
-protocol TasksViewControllable: ViewControllable {
+protocol TasksViewControllable: ViewControllable, ReplaceModalable {
+  func replaceModal(viewController: ViewControllable?)
 }
 
 final class TasksRouter
   : ViewableRouter<TasksInteractable, TasksViewControllable>
   , TasksRouting {
   
-  override init(
+  private var taskEditingBuilder: TaskEditingBuildable
+  private var taskEditing: TaskEditingRouting?
+  
+  init(
     interactor: TasksInteractable,
-    viewController: TasksViewControllable
+    viewController: TasksViewControllable,
+    taskEditingBuilder: TaskEditingBuildable
   ) {
+    self.taskEditingBuilder = taskEditingBuilder
     super.init(interactor: interactor, viewController: viewController)
     interactor.router = self
+  }
+  
+  func routeToTaskEditing(mode: TaskEditingViewMode) {
+    let taskEditing = self.taskEditingBuilder.build(
+      withListener: self.interactor,
+      mode: mode
+    )
+    self.taskEditing = taskEditing
+    self.attachChild(taskEditing)
+    
+    self.viewController.replaceModal(
+      viewController: UINavigationController(
+        root: taskEditing.viewControllable
+      )
+    )
+  }
+  
+  func closeTaskEditing() {
+    if let taskEditing = taskEditing {
+      self.detachChild(taskEditing)
+      self.taskEditing = nil
+      self.viewController.replaceModal(viewController: nil)
+    }
   }
 }

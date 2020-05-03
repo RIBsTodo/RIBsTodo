@@ -14,7 +14,7 @@ protocol TasksDependency: Dependency {
 
 final class TasksComponent: Component<TasksDependency> {
   var taskService: TaskServiceProtocol {
-    return TaskService(realm: try! Realm())
+    self.container.resolve(TaskServiceProtocol.self)!
   }
 }
 
@@ -38,6 +38,13 @@ final class TasksBuilder: Builder<TasksDependency>, TasksBuildable {
       taskService: component.taskService
     )
     interactor.listener = listener
-    return TasksRouter(interactor: interactor, viewController: viewController)
+    
+    let taskEditingBuilder = TaskEditingBuilder(dependency: component)
+    
+    return TasksRouter(
+      interactor: interactor,
+      viewController: viewController,
+      taskEditingBuilder: taskEditingBuilder
+    )
   }
 }
