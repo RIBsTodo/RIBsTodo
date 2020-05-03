@@ -38,6 +38,10 @@ final class RootRouter
     let tasks = tasksBuilder.build(withListener: self.interactor)
     self.tasks = tasks
     self.attachChild(tasks)
-    self.viewController.replaceChildViewController(viewController: tasks.viewControllable)
+    self.viewController.replaceChildViewController(
+      viewController: UINavigationController(
+        root: tasks.viewControllable
+      )
+    )
   }
 }
