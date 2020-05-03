@@ -19,7 +19,6 @@ class TaskCellReactor: Reactor {
   struct State {
     var title: String { self.task.title }
     var isMarked: Bool { self.task.isMarked }
-    var id: String { self.task.id }
     fileprivate var task: Task
   }
   
