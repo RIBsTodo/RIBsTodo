@@ -3,7 +3,7 @@ RIBsTodo
 
 ![Swift](https://img.shields.io/badge/Swift-5.0-orange.svg)
 
-RIBsTodo is an iOS application developed using [RIBs](https://github.com/uber/RIBs). Inspired by [RxTodo](https://github.com/devxoul/RxTodo).
+RIBsTodo is an iOS application developed using [RIBs](https://github.com/uber/RIBs) and [ReactorKit](https://github.com/devxoul/ReactorKit). Inspired by [RxTodo](https://github.com/devxoul/RxTodo).
 
 Features
 --------
