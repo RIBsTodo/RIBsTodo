@@ -70,7 +70,7 @@ final class TasksViewController
     action: nil
   )
   
-  private let activityIndicatorView = UIActivityIndicatorView(style: .large)
+  private let activityIndicatorView = UIActivityIndicatorView()
   
   private let tableView = UITableView().then {
     $0.allowsSelectionDuringEditing = true
