@@ -14,6 +14,8 @@ import RxRealm
 protocol TaskServiceProtocol {
   var event: PublishRelay<Task.Event> { get }
   
+  var repository: TaskRepositoryProtocol { get }
+  
   func update(id: String, title: String, memo: String) -> Single<Void>
   func create(title: String, memo: String) -> Single<Void>
   func delete(id: String) -> Single<Void>
@@ -27,7 +29,7 @@ class TaskService: TaskServiceProtocol {
   
   var event: PublishRelay<Task.Event> = .init()
   
-  private let repository: TaskRepositoryProtocol
+  let repository: TaskRepositoryProtocol
   
   init(repository: TaskRepositoryProtocol) {
     self.repository = repository
