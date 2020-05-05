@@ -12,7 +12,7 @@ Features
 * Using [RIBs](https://github.com/uber/RIBs)
 * Using [ReactorKit](https://github.com/devxoul/ReactorKit)
 * Using [RxDataSources](https://github.com/RxSwiftCommunity/RxDataSources)
-* Testing with [Stubber](https://github.com/devxoul/Stubber)[Quick](https://github.com/Quick/Quick)[Nimble](https://github.com/Quick/Nimble)
+* Testing with [Stubber](https://github.com/devxoul/Stubber), [Quick](https://github.com/Quick/Quick), [Nimble](https://github.com/Quick/Nimble)
 
 Requirements
 ------------
