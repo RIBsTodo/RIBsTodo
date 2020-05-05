@@ -23,7 +23,7 @@ Requirements
 
 Screenshots
 -----------
-<img width="320" src="images/../RIBsTodo/Resources/Simulator%20Screen%20Shot%20-%20iPhone%208%20-%202020-05-05%20at%2017.18.51.png"><img width="320" src="images/../RIBsTodo/Resources/Simulator%20Screen%20Shot%20-%20iPhone%208%20-%202020-05-05%20at%2017.19.30.png"><img width="320" src="images/../RIBsTodo/Resources/Simulator%20Screen%20Shot%20-%20iPhone%208%20-%202020-05-05%20at%2017.19.59.png">
+<img width="240" src="images/../RIBsTodo/Resources/Simulator%20Screen%20Shot%20-%20iPhone%208%20-%202020-05-05%20at%2017.18.51.png"><img width="240" src="images/../RIBsTodo/Resources/Simulator%20Screen%20Shot%20-%20iPhone%208%20-%202020-05-05%20at%2017.19.30.png"><img width="240" src="images/../RIBsTodo/Resources/Simulator%20Screen%20Shot%20-%20iPhone%208%20-%202020-05-05%20at%2017.19.59.png">
 
 
 License
