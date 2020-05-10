@@ -7,7 +7,7 @@ RIBsTodo is an iOS Todo application developed using [RIBs](https://github.com/ub
 
 Features
 --------
-
+* Using [Swinject](https://github.com/Swinject/Swinject) for DI
 * Using [Realm](https://github.com/realm/realm-cocoa)
 * Using [RIBs](https://github.com/uber/RIBs)
 * Using [ReactorKit](https://github.com/devxoul/ReactorKit)
